@@ -1,0 +1,43 @@
+{
+  "name": "expo-background-location",
+  "author": {
+    "name": "Harold Waterkeyn"
+  },
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "format": "prettier --write 'src/**/*.{js,ts,css,scss,json,md,yml,html}'"
+  },
+  "dependencies": {
+    "expo": "^32.0.5",
+    "luxon": "^1.11.1",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-navigation": "^3.2.0",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "prettier": "^1.16.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss,json,md,yml,html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
